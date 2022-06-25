@@ -25,3 +25,34 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## CREATE ANGULAR PROJECT WITH LOCAL CLI
+
+npx -p @angular/cli ng new `<project-name>`
+npx @angular/cli@7 new Angular7Project
+
+https://medium.com/@starikovs/how-to-use-angular-cli-locally-729dbb6707dd
+
+---
+
+# INSTALL ALL THESE
+
+npx -p @angular/cli ng new `<project-name>`
+
+npm i @angular/material@12.2
+
+npm install --save @angular/cdk@12.2
+
+npm start
+
+---
+
+# CREATE COMPONENT
+
+ng generate component banner --skipTests true --modile app.module.ts
+
+npm run-script ng generate component banner --skipTests true --module app.module.ts
+
+# ITS WORKS[CRAETE MODULE]
+
+npm run ng -- generate component banner --module=app
