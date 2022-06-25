@@ -1,8 +1,22 @@
 @use "~@angular/material" as mat;
 @use "sass:map";
 
+@mixin app-banner-typography($typography-config) {
+  app-banner {
+    .heading {
+      // [`typography-leve`] OVERRIDE THE FONT STYLE FOR MORE CHECK [./core/typography/typography-utils'] INSIDE INED
+      @include mat.typography-level($typography-config, title);
+    }
+    .message {
+      @include mat.typography-level($typography-config, body-1);
+    }
+  }
+}
+
 @mixin app-banner-theme($theme) {
   $theme-color: mat.get-color-config($theme);
+  //@returns {Map} Typography configuration for a theme. see index theme[`./core/theming/theming`]
+  $typography: mat.get-typography-config($theme);
 
   // CREATING COLOR PALETTE FOR COMPONENT
   $primary-palette: map.get($theme-color, primary);
@@ -12,6 +26,11 @@
 
   // MAT PREDEFINED COMPOENT THEME COLOE LINKE [CARD, DIALOG, TOOLTIP etc] for mersee core themeing palette
   $background: map.get($theme-color, background);
+
+  // TYPOGRAPHY MIXIN
+  @if $typography != null {
+    @include app-banner-typography($typography);
+  }
 
   app-banner {
     background-color: mat.get-color-from-palette($background, card);

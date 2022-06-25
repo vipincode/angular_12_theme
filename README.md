@@ -70,4 +70,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 ## Add Material Icon
 
-@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+`<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">`
+
+## OR
+
+`@import url("https://fonts.googleapis.com/icon?family=Material+Icons");`
