@@ -26,30 +26,36 @@
   </mat-toolbar>
 </div>
 
-<div class="container">
-  <div>
-    <app-banner
-      type="info"
-      message="This component will get your own theme!"
-    ></app-banner>
-  </div>
+<main class="content">
+  <div class="container">
+    <div>
+      <app-banner
+        type="info"
+        message="This component will get your own theme!"
+      ></app-banner>
+    </div>
 
-  <div>
-    <h2>Options</h2>
+    <h2>Choose an Options:</h2>
     <mat-form-field appearance="fill">
-      <mat-label>Select an option</mat-label>
-      <mat-select [(value)]="selected">
-        <mat-option>None</mat-option>
-        <mat-option value="option1">Option 1</mat-option>
-        <mat-option value="option2">Option 2</mat-option>
-        <mat-option value="option3">Option 3</mat-option>
+      <mat-label>Choose a theme</mat-label>
+      <mat-select (selectionChange)="setTheme($event)">
+        <mat-option value="dark">Dark</mat-option>
+        <mat-option value="light">Light</mat-option>
       </mat-select>
     </mat-form-field>
-  </div>
+    <div class="buttons">
+      <button mat-raised-button color="primary">Primary</button>
+      <button mat-raised-button color="accent">Accent</button>
+      <button mat-raised-button color="warn">Warn</button>
+    </div>
 
-  <div class="buttons">
-    <button mat-raised-button color="primary">Primary</button>
-    <button mat-raised-button color="accent">Accent</button>
-    <button mat-raised-button color="warn">Warn</button>
+    <div>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio modi
+        facilis iste sit beatae culpa repellendus, cum distinctio laboriosam
+        eius necessitatibus recusandae earum soluta a blanditiis nostrum et quam
+        amet!
+      </p>
+    </div>
   </div>
-</div>
+</main>

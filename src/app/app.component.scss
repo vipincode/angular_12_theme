@@ -1,7 +1,19 @@
+:host {
+  box-sizing: border-box;
+  border-radius: 10px;
+  display: block;
+}
+
 .spacer {
   flex: 1 1 auto;
 }
 
 button + button {
   margin-left: 20px;
+}
+
+.content {
+  padding: 20px;
+  box-sizing: border-box;
+  min-height: calc(100vh - 64px);
 }
