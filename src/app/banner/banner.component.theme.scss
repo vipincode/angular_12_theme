@@ -1,0 +1,15 @@
+@use "~@angular/material" as mat;
+@use "sass:map";
+
+@mixin app-banner-theme($theme) {
+  $theme-color: mat.get-color-config($theme);
+  // Note that in style.scss we hame color map with primary, info, success and accent
+  $success-color: map.get($theme-color, success);
+  // It is a color pallet mixn to access all color
+  $background-color: mat.get-color-from-palette($success-color, lighter);
+
+  @debug $background-color;
+  app-banner {
+    background-color: $background-color;
+  }
+}

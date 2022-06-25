@@ -26,6 +26,8 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
+## MUST DO THIS BEFORE RUN
+
 ## CREATE ANGULAR PROJECT WITH LOCAL CLI
 
 npx -p @angular/cli ng new `<project-name>`
@@ -51,8 +53,17 @@ npm start
 
 ng generate component banner --skipTests true --modile app.module.ts
 
-npm run-script ng generate component banner --skipTests true --module app.module.ts
+npm run ng generate component banner --skipTests true --module app.module.ts
 
-# ITS WORKS[CRAETE MODULE]
+# CREATE COMPONENT [WHEN PROJECT GENERATED WITH LOCAL CLI]
 
 npm run ng -- generate component banner --module=app
+
+# if browser console give error
+
+`ERROR Error: Unexpected synthetic property @transitionMessages found. Please make sure that:`
+
+Import this in `app.module.ts` register it imports
+import { BrowserModule } from '@angular/platform-browser';
+
+`@NgModule({ ..., imports: [ ..., BrowserAnimationsModule ], ... })`
