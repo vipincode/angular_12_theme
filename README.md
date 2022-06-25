@@ -67,3 +67,7 @@ Import this in `app.module.ts` register it imports
 import { BrowserModule } from '@angular/platform-browser';
 
 `@NgModule({ ..., imports: [ ..., BrowserAnimationsModule ], ... })`
+
+## Add Material Icon
+
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");

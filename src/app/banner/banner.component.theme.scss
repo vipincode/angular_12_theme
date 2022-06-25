@@ -3,13 +3,26 @@
 
 @mixin app-banner-theme($theme) {
   $theme-color: mat.get-color-config($theme);
-  // Note that in style.scss we hame color map with primary, info, success and accent
-  $success-color: map.get($theme-color, success);
-  // It is a color pallet mixn to access all color
-  $background-color: mat.get-color-from-palette($success-color, lighter);
 
-  @debug $background-color;
+  // CREATING COLOR PALETTE FOR COMPONENT
+  $primary-palette: map.get($theme-color, primary);
+  $success-palette: map.get($theme-color, success);
+  $info-palette: map.get($theme-color, info);
+  $accent-palette: map.get($theme-color, accent);
+
+  // MAT PREDEFINED COMPOENT THEME COLOE LINKE [CARD, DIALOG, TOOLTIP etc] for mersee core themeing palette
+  $background: map.get($theme-color, background);
+
   app-banner {
-    background-color: $background-color;
+    background-color: mat.get-color-from-palette($background, card);
+    &.app-banner-succes {
+      background-color: mat.get-color-from-palette($success-palette, lighter);
+    }
+    &.app-banner-info {
+      background-color: mat.get-color-from-palette($info-palette, lighter);
+    }
+    &.app-banner-accent {
+      background-color: mat.get-color-from-palette($accent-palette, lighter);
+    }
   }
 }
