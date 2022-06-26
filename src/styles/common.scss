@@ -1,4 +1,6 @@
 @use "@angular/material" as mat;
+@use "../app/banner/banner.component.theme" as banner;
+@use "../app/app-theme.scss" as root;
 @use "sass:map";
 
 // [TYPOGRAPHY]
@@ -25,4 +27,13 @@ $workshop-info: mat.define-palette(mat.$blue-palette);
       ),
     )
   );
+}
+
+// @include mat.core-theme($workshop-theme);
+// ADD BANNER THEME
+// ADDING LIGHT THMEME
+@mixin create-theme($workshop-theme) {
+  @include mat.all-component-themes($workshop-theme);
+  @include banner.app-banner-theme($workshop-theme);
+  @include root.app-root-thme($workshop-theme);
 }
