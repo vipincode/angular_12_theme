@@ -33,7 +33,19 @@ $workshop-info: mat.define-palette(mat.$blue-palette);
 // ADD BANNER THEME
 // ADDING LIGHT THMEME
 @mixin create-theme($workshop-theme) {
-  @include mat.all-component-themes($workshop-theme);
+  // THIS IS USED FOR ALL COMPONENT THAT INCREASE BUNDLE SIZE
+  // @include mat.all-component-themes($workshop-theme);
+
+  // LETS ADD ONLY SPECIFIC COMPONENET THEME
+  @include mat.core-theme($workshop-theme);
+  @include mat.select-theme($workshop-theme);
+  @include mat.toolbar-theme($workshop-theme);
+  @include mat.button-theme($workshop-theme);
+  @include mat.card-theme($workshop-theme);
+  @include mat.form-field-theme($workshop-theme);
+
+  // IMPORT BANNER COMPONENT
   @include banner.app-banner-theme($workshop-theme);
+  // ADD APP COMPONENT THEME
   @include root.app-root-thme($workshop-theme);
 }
