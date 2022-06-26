@@ -3,7 +3,7 @@
 @use "@angular/cdk/overlay" as overlay;
 @use "@angular/cdk/text-field" as text-field;
 @use "@angular/material/core/focus-indicators/focus-indicators";
-@use "./styles/common.scss";
+@use "./styles/common.scss" as common;
 
 // ADD TYPOGRAPHY SO DEFAULT IS NOT LOADING
 // @include mat.core(common.$workshop-typography);
@@ -15,6 +15,13 @@
 @include text-field.text-field-autofill();
 
 @include focus-indicators.private-strong-focus-indicators-positioning();
+@include mat.strong-focus-indicators(
+  (
+    border-style: dotted,
+    border-width: 4px,
+    border-radius: 4px,
+  )
+);
 @include mat.typography-hierarchy(common.$workshop-typography, "body");
 
 // BASE RULE

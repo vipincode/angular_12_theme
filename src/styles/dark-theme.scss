@@ -8,6 +8,18 @@
 $workshop-primary: mat.define-palette(mat.$indigo-palette, 700, 400, 900);
 $workshop-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
+// OPTIONAL COLOR DEIFINE [MERGE COLORS]
+$workshop-succes: mat.define-palette(mat.$green-palette, 700, 500, 900);
+$workshop-info: mat.define-palette(mat.$blue-palette, A400, A200, A700);
+
+$workshop-color-scheme: (
+  success: $workshop-succes,
+  info: $workshop-info,
+  background: (
+    background: map.get(mat.$blue-gray-palette, 900),
+  ),
+);
+
 $workshop-theme: mat.define-dark-theme(
   (
     color: (
@@ -19,7 +31,10 @@ $workshop-theme: mat.define-dark-theme(
 );
 
 // APPLY EXTRA COLOR - FOR DARK THEME
-$workshop-theme: common.apply-extra-colors($workshop-theme);
+$workshop-theme: common.apply-extra-colors(
+  $workshop-theme,
+  $workshop-color-scheme
+);
 
 // [GENERATE THME LIGHT THME] - FROM COMMON
 @include common.create-theme($workshop-theme);

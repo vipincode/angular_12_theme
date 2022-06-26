@@ -4,7 +4,17 @@
 @mixin app-root-thme($theme) {
   $theme-color: mat.get-color-config($theme);
   $background: map.get($theme-color, background);
+
+  $isDark: map.get($theme, is-dark);
+
   .content {
     background-color: mat.get-color-from-palette($background, background);
+  }
+  .logo {
+    @if $isDark {
+      background-image: url("../assets/images/light-logo.png");
+    } @else {
+      background-image: url("../assets/images/dark-logo.png");
+    }
   }
 }
