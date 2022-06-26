@@ -19,8 +19,6 @@ $workshop-info: mat.define-palette(mat.$blue-palette);
   @return map.deep-merge(
     $theme,
     (
-      success: $workshop-succes,
-      info: $workshop-info,
       color: (
         success: $workshop-succes,
         info: $workshop-info,

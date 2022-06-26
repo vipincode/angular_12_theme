@@ -1,18 +1,21 @@
 @use "@angular/material" as mat;
+@use "@angular/cdk/a11y" as a11y;
+@use "@angular/cdk/overlay" as overlay;
+@use "@angular/cdk/text-field" as text-field;
+@use "@angular/material/core/focus-indicators/focus-indicators";
 @use "./styles/common.scss";
 
 // ADD TYPOGRAPHY SO DEFAULT IS NOT LOADING
-@include mat.core(common.$workshop-typography);
+// @include mat.core(common.$workshop-typography);
 
-// @include mat.ripple.ripple();
-// @include mat.a11y.a11y-visually-hidden();
-// @include mat.overlay.overlay();
-// @include mat.text-field.text-field-autosize();
-// @include mat.text-field.text-field-autofill();
+@include mat.ripple();
+@include a11y.a11y-visually-hidden();
+@include overlay.overlay();
+@include text-field.text-field-autosize();
+@include text-field.text-field-autofill();
 
-// @include mat.focus-indicators.private-strong-focus-indicators-positioning();
-
-// @include mat.typography-hierarchy(common.$workshop-typography, "body");
+@include focus-indicators.private-strong-focus-indicators-positioning();
+@include mat.typography-hierarchy(common.$workshop-typography, "body");
 
 // BASE RULE
 html,
