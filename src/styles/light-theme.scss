@@ -15,6 +15,7 @@ $workshop-theme: mat.define-light-theme(
       accent: $workshop-accent,
     ),
     typography: common.$workshop-typography,
+    density: default,
   )
 );
 
